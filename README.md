@@ -26,7 +26,8 @@ Programmatically:
 
     webmake(inputPath, { ext: ['css', 'otherext'] }, cb);
 
-The generated module contains a `src` property which contains the original CSS from the file.
+The generated module contains a `src` property which contains the original CSS from the file and an `element` property 
+that references the injected style tag.
 
     var css = require('./path/to/cssfile'); // injects the css automatically into the current page
     console.log(css.src); // writes the source of the CSS file to the console
