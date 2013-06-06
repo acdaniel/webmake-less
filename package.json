@@ -1,0 +1,29 @@
+{
+  "name": "webmake-css",
+  "version": "0.1.0",
+  "description": "Require CSS and LESS files with Webmake",
+  "keywords": [
+    "browser",
+    "browserify",
+    "bundle",
+    "cjs",
+    "commonjs",
+    "deploy",
+    "json",
+    "make",
+    "require",
+    "css",
+    "less",
+    "web",
+    "webmake"
+  ],
+  "author": "Adam Daniel <adam@acdaniel.com>",
+  "dependencies": {
+    "deferred": "~0.6.5",
+    "less": "~1.4.0"
+  },
+  "devDependencies": {
+    "webmake": "~0.3.16"
+  },
+  "license": "MIT"
+}
