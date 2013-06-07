@@ -1,4 +1,5 @@
 var less = require('less'),
+    path = require('path'),
     deferred = require('deferred');
 
 exports.extension = ['less'];
