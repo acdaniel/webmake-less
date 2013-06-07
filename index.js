@@ -1,15 +1,14 @@
-var path = require('path'),
-    less = require('less'),
+var less = require('less'),
     deferred = require('deferred');
 
-exports.extension = ['css', 'less'];
+exports.extension = ['less'];
 exports.noDependencies = true;
 
 function buildCode(css) {
   var formattedCss = css.replace(/\"/g, '\\"').trim().replace(/\n/g, '\\n" + \n"');
   var code =
     'var src = "' + formattedCss + '";\n' +
-    'var style = document.createElement("style"); style.type="text/css"; style.appendChild(document.createTextNode(src)); document.getElementsByTagName("head")[0].appendChild(style);\n' +
+    'var style = document.getElementsByTagName("style")[0] || document.createElement("style"); style.type="text/css"; style.appendChild(document.createTextNode(src)); document.getElementsByTagName("head")[0].appendChild(style);\n' +
     'module.exports = {src: src, element: style};';
   return code;
 }
@@ -26,12 +25,5 @@ function compileLess(filename, src) {
 }
 
 exports.compile = function (src, info) {
-  var ext = path.extname(info.filename),
-      code = null;
-  if (ext === '.less') {
-    code = compileLess(info.filename, src);
-  } else {
-    code = buildCode(src);
-  }
-  return { code: code };
+  return { code: compileLess(info.filename, src) };
 };

@@ -1,7 +1,7 @@
 {
-  "name": "webmake-css",
+  "name": "webmake-less",
   "version": "0.1.0",
-  "description": "Require CSS and LESS files with Webmake",
+  "description": "Require LESS files with Webmake",
   "keywords": [
     "browser",
     "browserify",
