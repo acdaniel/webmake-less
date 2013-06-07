@@ -25,7 +25,7 @@ function buildCode(css, info) {
 
 function compileLess(src, info) {
   var def = deferred();
-  less.render(src, {compress: true, paths: [path.dirname(info.filename)], dumpLineNumbers: 'mediaquery'}, function (err, css) {
+  less.render(src, {compress: true, paths: [path.dirname(info.filename)]}, function (err, css) {
     if (err) {
       return def.reject(new Error(err));
     }
