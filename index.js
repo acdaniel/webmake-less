@@ -4,7 +4,6 @@ var less = require('less'),
 
 exports.extension = ['less'];
 exports.type = 'css';
-exports.noDependencies = true;
 
 function compileLess(src, info) {
   var def = deferred();
